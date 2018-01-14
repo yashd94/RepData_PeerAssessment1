@@ -98,4 +98,3 @@ i <- h + theme(axis.line = element_line(colour = "darkblue",
                                          size = 1, linetype = "solid"), panel.background = element_rect(c1[490]),  axis.title=black.bold.italic.text, title=black.bold.italic.text, plot.title = element_text(hjust = 0.5))
 print(i)
 ```
-
