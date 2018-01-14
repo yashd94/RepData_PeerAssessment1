@@ -22,7 +22,7 @@ par(bg=c1[490], col.axis= c1[651], col.main=c1[651], col.lab=c1[651], fg=c1[651]
 hist(ActivityPerDay$Total_Steps, xlab="Total number of steps taken per day", ylab="Frequency", main="Histogram- Total Number of Steps Taken per Day")
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png)
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
 ### Calculating the mean and median of steps taken per day
 
@@ -53,7 +53,7 @@ par(bg=c1[490], col.axis= c1[651], col.main=c1[651], col.lab=c1[651], fg=c1[651]
 plot(ActivityPerInterval$Interval, ActivityPerInterval$Avg_steps, type='l', xlab="5-Minute Interval", ylab="Average number of steps per interval", main="Average Daily Patterns")
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png)
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
 ### Which 5-minute interval has the maximum number of steps (across all days)?
 
@@ -80,6 +80,11 @@ intmz_na$Avg_steps <- NULL
 ActivityDataNullImputed <- intmz_na
 ActivityDataNonNull <- ActivityData[which(!is.na(ActivityData$steps)),]
 FinalImputedActivityData <- rbind(ActivityDataNonNull, ActivityDataNullImputed)
+sprintf("The count of rows of data with missing values is %s",nrow(ActivityNA))
+```
+
+```
+## [1] "The count of rows of data with missing values is 2304"
 ```
 
 ## *Re-calculating the number of steps taken per day (full dataset)*
@@ -92,7 +97,7 @@ par(bg=c1[490], col.axis= c1[651], col.main=c1[651], col.lab=c1[651], col.sub=c1
 hist(FinalActivityPerDay$Total_Steps, xlab="Total number of steps taken per day", ylab="Frequency", main="Histogram- Total Number of Steps Taken per Day", sub="(Data Includes Imputed Information)")
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
+![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png)
 
 ### Re-calculating the mean and median of steps taken per day
 
@@ -140,5 +145,4 @@ i <- h + theme(axis.line = element_line(colour = "darkblue",
 print(i)
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png)
-
+![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)

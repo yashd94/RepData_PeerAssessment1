@@ -55,6 +55,7 @@ intmz_na$Avg_steps <- NULL
 ActivityDataNullImputed <- intmz_na
 ActivityDataNonNull <- ActivityData[which(!is.na(ActivityData$steps)),]
 FinalImputedActivityData <- rbind(ActivityDataNonNull, ActivityDataNullImputed)
+sprintf("The count of rows of data with missing values is %s",nrow(ActivityNA))
 ```
 
 ## *Re-calculating the number of steps taken per day (full dataset)*
